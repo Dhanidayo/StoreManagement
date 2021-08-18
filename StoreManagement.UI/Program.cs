@@ -8,7 +8,7 @@ namespace StoreManagement.UI
 {
     class Program
     {
-        //using injection mthod to handle dependency inversion.
+        //method to handle dependency injections.
         private static IServiceProvider serviceProvider;
         static void Main(string[] args)
         {
