@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\FirstNUnitTest\\FirstNUnitTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\FirstNUnitTest\\FirstNUnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\FirstNUnitTest\\FirstNUnitTest.csproj",
+        "projectName": "FirstNUnitTest",
+        "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\FirstNUnitTest\\FirstNUnitTest.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\FirstNUnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.17.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

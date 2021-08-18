@@ -1,0 +1,17 @@
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.DB.deps.json
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.DB.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\ref\Management.DB.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.DB.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.csproj.AssemblyReference.cache
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.AssemblyInfoInputs.cache
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.AssemblyInfo.cs
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\ref\Management.DB.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.Commons.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.Models.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.Models.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.Commons.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.csproj.CopyComplete

@@ -1,0 +1,114 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "StoreManagement.UI/1.0.0": {
+        "dependencies": {
+          "Management.BL": "1.0.0",
+          "Management.Commons": "1.0.0",
+          "Management.DB": "1.0.0",
+          "Management.Models": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "3.1.11"
+        },
+        "runtime": {
+          "StoreManagement.UI.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/3.1.11": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.11"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "3.1.11.0",
+            "fileVersion": "3.100.1120.56716"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.11": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "3.1.11.0",
+            "fileVersion": "3.100.1120.56716"
+          }
+        }
+      },
+      "Management.BL/1.0.0": {
+        "dependencies": {
+          "Management.Commons": "1.0.0",
+          "Management.DB": "1.0.0",
+          "Management.Models": "1.0.0"
+        },
+        "runtime": {
+          "Management.BL.dll": {}
+        }
+      },
+      "Management.Commons/1.0.0": {
+        "runtime": {
+          "Management.Commons.dll": {}
+        }
+      },
+      "Management.DB/1.0.0": {
+        "dependencies": {
+          "Management.Models": "1.0.0"
+        },
+        "runtime": {
+          "Management.DB.dll": {}
+        }
+      },
+      "Management.Models/1.0.0": {
+        "dependencies": {
+          "Management.Commons": "1.0.0"
+        },
+        "runtime": {
+          "Management.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StoreManagement.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.DependencyInjection/3.1.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ATSyAVsp+9vm2O1tveMaV44lDxaiy8nZm/YQ6WlBNKG7FXQSBfBJCAyQv2WXacQe5sBsWsGMHaHyVxPJha39GA==",
+      "path": "microsoft.extensions.dependencyinjection/3.1.11",
+      "hashPath": "microsoft.extensions.dependencyinjection.3.1.11.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rfIMu8yiK8Z+N6CMlcOCB0Te9Aqj/w7InRDgouqLQqIO6LQB4+YYKumO6XONyMwcO0+FWGc8ZNdhDQIwKTdy4w==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.11",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.3.1.11.nupkg.sha512"
+    },
+    "Management.BL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Management.Commons/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Management.DB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Management.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\bin\Debug\net5.0\Management.Models.deps.json
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\bin\Debug\net5.0\Management.Models.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\bin\Debug\net5.0\ref\Management.Models.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\bin\Debug\net5.0\Management.Models.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.csproj.AssemblyReference.cache
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.AssemblyInfoInputs.cache
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.AssemblyInfo.cs
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\ref\Management.Models.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\bin\Debug\net5.0\Management.Commons.dll
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\bin\Debug\net5.0\Management.Commons.pdb
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.Models\obj\Debug\net5.0\Management.Models.csproj.CopyComplete

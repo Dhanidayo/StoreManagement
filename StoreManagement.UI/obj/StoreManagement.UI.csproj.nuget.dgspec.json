@@ -1,0 +1,321 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\StoreManagement.UI\\StoreManagement.UI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.BL\\Management.BL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.BL\\Management.BL.csproj",
+        "projectName": "Management.BL",
+        "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.BL\\Management.BL.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.BL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj"
+              },
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj"
+              },
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj",
+        "projectName": "Management.Commons",
+        "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj",
+        "projectName": "Management.DB",
+        "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj",
+        "projectName": "Management.Models",
+        "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\StoreManagement.UI\\StoreManagement.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\StoreManagement.UI\\StoreManagement.UI.csproj",
+        "projectName": "StoreManagement.UI",
+        "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\StoreManagement.UI\\StoreManagement.UI.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\StoreManagement.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.BL\\Management.BL.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.BL\\Management.BL.csproj"
+              },
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Commons\\Management.Commons.csproj"
+              },
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.DB\\Management.DB.csproj"
+              },
+              "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\Management.Models\\Management.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

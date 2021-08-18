@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Management.BL/1.0.0": {
+        "dependencies": {
+          "Management.Commons": "1.0.0",
+          "Management.DB": "1.0.0",
+          "Management.Models": "1.0.0"
+        },
+        "runtime": {
+          "Management.BL.dll": {}
+        }
+      },
+      "Management.Commons/1.0.0": {
+        "runtime": {
+          "Management.Commons.dll": {}
+        }
+      },
+      "Management.DB/1.0.0": {
+        "dependencies": {
+          "Management.Models": "1.0.0"
+        },
+        "runtime": {
+          "Management.DB.dll": {}
+        }
+      },
+      "Management.Models/1.0.0": {
+        "dependencies": {
+          "Management.Commons": "1.0.0"
+        },
+        "runtime": {
+          "Management.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Management.BL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Management.Commons/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Management.DB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Management.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
