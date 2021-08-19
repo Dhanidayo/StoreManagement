@@ -62,19 +62,19 @@ namespace Management.DB
             var reader = await command.ExecuteReaderAsync();
 
             //creating a list of customers
-            List<Customers> customers = new List<Customers>();
+            List<Customer> customers = new List<Customer>();
 
             //looping through the reader to read the data in the DB
             while (reader.Read())
             {
                 //Passing the key - the key is the name of the column in the database
-                var customer =  new Customers
+                var customer =  new Customer
                 {
                     FirstName = reader["FirstName"].ToString(),
                     LastName = reader["LastName"].ToString(),
                     Email = reader["Email"].ToString(),
-                    Pwd = reader["Pwd"].ToString(),
-                    Id = Convert.ToInt32(reader["Id"])
+                    Password = reader["Password"].ToString(),
+                    Id = reader["Id"].ToString()
                 };
 
                 customers.Add(customer);

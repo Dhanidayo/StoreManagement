@@ -16,13 +16,13 @@ namespace Management.BL
             _dataStore = dataStore;
             _dataStore.ReadDataFromFile();
         }
-        public Store CreateStore(StoreType storeType, string storeName, string storeId, int product)
+        public Store CreateStore(StoreType storeType, string storeName, string Id, int product)
         {
             Store newStore = new Store
             {
                 StoreType = storeType,
                 StoreName = storeName,
-                StoreId = storeId,
+                Id = Id,
                 Product = product
             };
             //function to add store details to file.

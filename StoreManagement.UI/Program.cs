@@ -9,6 +9,7 @@ namespace StoreManagement.UI
     class Program
     {
         //method to handle dependency injections.
+        //registration of the dependency in a service container
         private static IServiceProvider serviceProvider;
         static void Main(string[] args)
         {
@@ -29,6 +30,7 @@ namespace StoreManagement.UI
             }
         }
 
+        //registration of services into the configure services method.
         private static void ConfigureServices()
         {
             var services = new ServiceCollection();

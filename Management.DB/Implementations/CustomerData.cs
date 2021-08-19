@@ -28,7 +28,7 @@ namespace Management.DB
                 var openedFile = File.AppendText(filePath);
                 foreach (var customer in customers)
                 {
-                    openedFile.WriteLine($"{customer.FirstName}, {customer.LastName}, {customer.Email}, {customer.PassWord}, {customer.Id}");
+                    openedFile.WriteLine($"{customer.FirstName}, {customer.LastName}, {customer.Email}, {customer.Password}, {customer.Id}");
                 }
                 openedFile.Dispose();
             }
@@ -58,7 +58,7 @@ namespace Management.DB
                         FirstName = data[0],
                         LastName = data[1],
                         Email = data[2],
-                        PassWord = data[3],
+                        Password = data[3],
                         Id = data[4]
                     };
                     customers.Add(customer);

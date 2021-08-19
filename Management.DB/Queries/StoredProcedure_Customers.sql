@@ -21,11 +21,11 @@ GO
 
 --Stored procedure to add a customer to the table
 CREATE PROCEDURE InsertCustomer
-@firstName VARCHAR(80), @lastName VARCHAR(80), @email VARCHAR(120), @pwd VARCHAR
+@firstName VARCHAR(80), @lastName VARCHAR(80), @email VARCHAR(120), @Password VARCHAR
 AS
 BEGIN
 				
-INSERT INTO Customers VALUES(@firstName, @lastName, @email, @pwd);
+INSERT INTO Customers VALUES(@firstName, @lastName, @email, @Password);
 
 END
 GO;

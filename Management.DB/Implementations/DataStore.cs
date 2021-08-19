@@ -31,7 +31,7 @@ namespace Management.DB
                 var openedFile = File.AppendText(filePath);
                 foreach (var store in stores)
                 {
-                    openedFile.WriteLine($"{store.StoreType}, {store.StoreName}, {store.StoreId}, {store.Product}");
+                    openedFile.WriteLine($"{store.StoreType}, {store.StoreName}, {store.Id}, {store.Product}");
                 }
                 openedFile.Dispose();
             }
@@ -61,7 +61,7 @@ namespace Management.DB
                     {
                         StoreType = (StoreType)Enum.Parse(typeof(StoreType),data[0]),
                         StoreName = data[1],
-                        StoreId = data[2],
+                        Id = data[2],
                         Product = Int32.Parse(data[3])
                     };
                     stores.Add(store);

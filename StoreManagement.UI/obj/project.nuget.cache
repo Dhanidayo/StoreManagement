@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "OQkKieSW3fhfTcFsj/gUy/Rqswff0LCcT3YBBpN5FNQLo5/c7pOX0+ICBXp2W8hZUjUJ5wg7w16pr/inLgw6Yg==",
-  "success": false,
+  "dgSpecHash": "p0IVl25NzFSkqivyqQDQbbS92vQ6A69acmkRuwZYXlZUk5+1+IrciObmtFQy/LfQlLzGruhc34DmfRtgMrLvHA==",
+  "success": true,
   "projectFilePath": "C:\\Users\\lenovo\\Dropbox\\My PC (DESKTOP-0CQ3F2P)\\Documents\\StoreManager\\StoreManagement.UI\\StoreManagement.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -15,7 +15,7 @@
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.11\\microsoft.extensions.dependencyinjection.3.1.11.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
@@ -104,15 +104,5 @@
     "C:\\Users\\lenovo\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.Extensions.DependencyInjection from 5.0.2 to 3.1.11. Reference the package directly from the project to select a different version. \r\n StoreManagement.UI -> Management.DB -> Microsoft.EntityFrameworkCore.SqlServer 5.0.9 -> Microsoft.EntityFrameworkCore.Relational 5.0.9 -> Microsoft.EntityFrameworkCore 5.0.9 -> Microsoft.Extensions.DependencyInjection (>= 5.0.2) \r\n StoreManagement.UI -> Microsoft.Extensions.DependencyInjection (>= 3.1.11)",
-      "libraryId": "Microsoft.Extensions.DependencyInjection",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

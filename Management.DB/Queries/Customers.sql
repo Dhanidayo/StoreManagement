@@ -19,7 +19,7 @@ INSERT INTO Customers (FirstName, LastName, Email) VALUES ('Uzor', 'Amaka', 'uzo
 
 	--Altering the table to accommodate a new column
 ALTER TABLE Customers
-ADD Pwd VARCHAR(11);
+ADD Password VARCHAR(11);
 
 	--Updating table.
 UPDATE Customers SET LastName = 'Rice' WHERE Id = 1;

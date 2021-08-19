@@ -10,59 +10,56 @@ namespace Management.BL
 {
     public class CustomerActions : IBusinessLogic
     {
-        //customer actions method to read data from file
-        private readonly ICustomerData _dataStore;
-        public CustomerActions(ICustomerData dataStore)
+        //Dependency Injection(Method Injection) - requesting for the service of ICustomerData
+        //and using the read from file method to read customer's data from file.
+        private readonly ICustomerData _customerData;
+        public CustomerActions(ICustomerData customerData)
         {
-            _dataStore = dataStore;
-            _dataStore.ReadDataFromFile();
+            _customerData = customerData;
+            _customerData.ReadDataFromFile();
         }
 
         //method to register a customer
         public Customer RegisterCustomer(string firstName, string lastName, string email, string passWord)
-        {
-            // if (!Validations.IsValidEmail(email))
-            // {
-            //     throw new FormatException("Email is not valid");
-            // }
+        {            
             Customer newCustomer = new Customer
             {
                 FirstName = firstName,
                 LastName = lastName,
                 Email = email,
-                PassWord = passWord
+                Password = passWord
             };
             //adding customer to file
-            //var storage = _dataStore.customers.Add(newCustomer);
-            //if (storage)
-            //{
+            var storage = _customerData.WriteDataToFile(newCustomer);
+            if (storage)
+            {
                 return newCustomer;
-            //}
-            //throw new TimeoutException("Unable to create customer now, please try again later");
+            }
+            throw new TimeoutException("Unable to create customer now, please try again later");
         }
 
         //method to login a customer - validate that the credentials are valid
         public Customer LoginCustomer(string email, string passWord)
         {
-            //_dataStore.ReadDataFromFile();
-            //var customerList = _dataStore.customers;
-            //foreach (var customer in customerList)
-            //{
+            _customerData.ReadDataFromFile();
+            var customerList = _customerData.customers;
+            foreach (var customer in customerList)
+            {
                 //check if credentials are valid and allow customer to login
-                //if (customer.Email == email && customer.PassWord == passWord)
-                //{
-                    //return customer;
-                //}
-                //else
-                //{
+                if (customer.Email == email && customer.Password == passWord)
+                {
+                    return customer;
+                }
+                else
+                {
                     throw new ArgumentNullException();
-                //}
-            //}
-            //return false;
+                }
+            }
+            return;
         }
         public void SaveChanges()
         {
-            _dataStore.WriteDataToFile();
+            _customerData.WriteDataToFile();
         }
     }
 }

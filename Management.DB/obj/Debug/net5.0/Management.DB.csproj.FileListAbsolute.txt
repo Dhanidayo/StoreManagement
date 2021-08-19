@@ -15,3 +15,6 @@ C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Managemen
 C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.Models.pdb
 C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.Commons.pdb
 C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.csproj.CopyComplete
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.DB.runtimeconfig.json
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\bin\Debug\net5.0\Management.DB.runtimeconfig.dev.json
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.DB\obj\Debug\net5.0\Management.DB.genruntimeconfig.cache

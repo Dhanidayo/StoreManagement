@@ -28,8 +28,23 @@ namespace Management.Models
             }
         }
 
-        public string Email { get; set; }
-        public string PassWord { get; set; }
+        private string email;
+        public string Email
+        {
+            get { return email; }
+            set { email = Validations.IsValidEmail(value); }
+        }
+        
+        private string password;
+        public string Password
+        {
+            get { return password; }
+            set { password = Validations.isValidPassword(value); }
+        }
+        
+
+        //public string Email { get; set; }
+        //public string PassWord { get; set; }
         public string Id { get; set; } = Guid.NewGuid().ToString();
     }
 }

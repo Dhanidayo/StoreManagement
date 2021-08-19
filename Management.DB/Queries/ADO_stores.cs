@@ -62,19 +62,18 @@ namespace Management.DB
             var reader = await command.ExecuteReaderAsync();
 
             //creating a list of stores
-            List<Stores> stores = new List<Stores>();
+            List<Store> stores = new List<Store>();
 
             //looping through the reader to read the data in the DB
             while (reader.Read())
             {
                 //Passing the key - the key is the name of the column in the database
-                var store =  new Stores
+                var store =  new Store
                 {
-                    StoreType = reader["StoreType"].ToString(),
+                    StoreType = (StoreType)Enum.Parse(typeof(StoreType),reader["StoreType"].ToString()),
                     StoreName = reader["StoreName"].ToString(),
-                    StoreId = reader["StoreId"].ToString(),
-                    Product = Convert.ToInt32(reader["Product"]),
-                    Id = Convert.ToInt32(reader["Id"])
+                    Id = reader["Id"].ToString(),
+                    Product = Convert.ToInt32(reader["Product"])
                 };
 
                 stores.Add(store);

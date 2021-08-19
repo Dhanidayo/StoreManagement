@@ -16,7 +16,7 @@ namespace StoreManagement.UI
         private static string passWord;
 
 
-        /// Method responsible for displaying the user interface
+        /// Method for displaying the user interface
         //method injection - taking two parameters
         public static async Task DisplayDashboard(IStore actions_store, IBusinessLogic actions_customer)
         {
@@ -48,19 +48,19 @@ namespace StoreManagement.UI
                             {
                                 Console.WriteLine("Enter FirstName: ");
                                 string firstName = Console.ReadLine();
-                                firstName = Validations.ValidateName(firstName);
+                                //firstName = Validations.ValidateName(firstName);
 
                                 Console.WriteLine("Enter LastName: ");
                                 string lastName = Console.ReadLine();
-                                lastName = Validations.ValidateName(lastName);
+                                //lastName = Validations.ValidateName(lastName);
 
                                 Console.WriteLine("Enter Email Address: ");
                                 string email_Address = Console.ReadLine();
-                                email_Address = Validations.IsValidEmail(email_Address);
+                                //email_Address = Validations.IsValidEmail(email_Address);
 
                                 Console.WriteLine("Enter Password: ");
                                 string passWord = Console.ReadLine();
-                                passWord = Validations.isValidPassword(passWord);
+                                //passWord = Validations.isValidPassword(passWord);
                                 
                                 //change the foreground color of the console to green
                                 //the register customer method executes

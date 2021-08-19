@@ -20,7 +20,7 @@ namespace Management.Models
             set { storeName = Validations.ValidateName(value); }
         }
 
-        public string StoreId { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         private int product;
         public int Product
