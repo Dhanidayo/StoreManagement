@@ -1,59 +1,59 @@
-using System;
-using Management.Models;
-using Management.DB;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+// using System;
+// using Management.Models;
+// using Management.DB;
+// using System.Collections.Generic;
+// using System.Threading.Tasks;
 
-namespace Management.BL
-{
-    public class SuperMarket : IStore
-    {
-        List<int> productList = new List<int>();
+// namespace Management.BL
+// {
+//     public class SuperMarket : IStoreActions
+//     {
+//         List<int> productList = new List<int>();
 
-        private readonly IDataStore _dataStore;
-        public SuperMarket(IDataStore dataStore)
-        {
-            _dataStore = dataStore;
-            _dataStore.ReadDataFromFile();
-        }
-        public Store CreateStore(StoreType storeType, string storeName, string Id, int product)
-        {
-            Store newStore = new Store
-            {
-                StoreType = storeType,
-                StoreName = storeName,
-                Id = Id,
-                Product = product
-            };
-            //function to add store details to file.
-            //var storage = _dataStore.stores.Add(newStore);
-            //check if add was successful, if not, throw an exception.
-            //if (storage)
-            //{
-                return newStore;
-            //}
-            //throw new TimeoutException("Unable to create store now, please try again later");
-        }
+//         private readonly IDataStore _dataStore;
+//         public SuperMarket(IDataStore dataStore)
+//         {
+//             _dataStore = dataStore;
+//             _dataStore.ReadDataFromFile();
+//         }
 
-        public int AddProducts(int product)
-        {
-            productList.Add(product);
-            return product;
-        }
+//         public async Task<Store> CreateStoreAsync(StoreType storeType, string storeName, string userId, int product)
+//         {
+//             Store newStore = new Store
+//             {
+//                 StoreType = storeType,
+//                 StoreName = storeName,
+//                 UserId = userId,
+//                 Product = product
+//             };
+//             //function to write store details to file.
+//             var addNewStore = await _dataStore.WriteDataToFileAsync(newStore);
+//             //check if create was successful, if not, throw an exception.
+//             if (addNewStore)
+//             {
+//                 return newStore;
+//             }
+//             throw new TimeoutException("Unable to create store now, please try again later");
+//         }
 
-        public void RemoveProducts(int product)
-        {
-            productList.Remove(product);
-        }
+//         public int AddProducts(string storeId, int product)
+//         {
+//             return _customerData.c
+//         }
 
-        public void SaveChanges()
-        {
-            _dataStore.WriteDataToFile();
-        }
+//         public void RemoveProducts(int product)
+//         {
+//             productList.Remove(product);
+//         }
 
-        public List<Store> GetStoreDetails()
-        {
-            return _dataStore.stores;
-        }
-    }
-}
+//         public void SaveChanges()
+//         {
+//             _dataStore.WriteDataToFile();
+//         }
+
+//         public List<Store> GetStoreDetails()
+//         {
+//             return _dataStore.stores;
+//         }
+//     }
+// }

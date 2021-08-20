@@ -11,7 +11,7 @@ namespace StoreManagement.UI
           private static int product;
         
         //method to display products on dashboard
-        public static void DisplayProductsDashboard(IStore actions_store)
+        public static void DisplayProductsDashboard(IStoreActions storeActions)
         {
             Console.WriteLine("Press:");
             Console.WriteLine("1 to Add products");
@@ -42,8 +42,7 @@ namespace StoreManagement.UI
 
 
                             //save store credentials to file
-                            actions_store.AddProducts(product);
-                            actions_store.SaveChanges();
+                            //storeActions.AddProducts(storeId, product);
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.ReadKey();
                         }
@@ -71,9 +70,6 @@ namespace StoreManagement.UI
                                 productInput = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
                             }
                             product = Validations.IsValidProduct(productInput);
-
-                            actions_store.RemoveProducts(product);
-                            actions_store.SaveChanges();
                         }
                         catch(FormatException ex)
                         {                       
@@ -92,7 +88,7 @@ namespace StoreManagement.UI
                         try
                         {
                             Console.WriteLine("===========STORE DETAILS===========");
-                            var myStore = actions_store.GetStoreDetails();
+                            //var myStore = storeActions.GetStoreDetails(storeId, userId);
                             //await UIHelpers.DisplayHistoryTable(stores);
                             Console.ReadKey();
                             Console.Clear();

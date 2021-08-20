@@ -9,17 +9,17 @@ namespace StoreManagement.UI
 {
     public class StoreDashboard
     {
-        //IStore.
+        //IStoreActions.
         
-        private static string storeName;
-        private static string storeId;
-        private static StoreType storeType;
-        private static int product;
+        // private static string storeName;
+        // private static string storeId;
+        // private static StoreType storeType;
+        // private static int product;
 
 
         /// Method responsible for displaying the user interface
          //method injection - taking one parameter.
-        public static async Task DisplayStoreDashboard(IStore actions_store, IBusinessLogic actions_customer)
+        public async static Task DisplayStoreDashboard(IStoreActions storeActions, Customer LoggedInCustomer)
         {
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Create a store.");
@@ -41,11 +41,7 @@ namespace StoreManagement.UI
                 {
                     case 1:
                         try
-                        {
-                            // Console.WriteLine("Press:");
-                            // Console.WriteLine("1 to enter store name");
-                            // Console.WriteLine("2 to ")
-                            
+                        {   
                             Console.WriteLine("Enter Kiosk name>>");
                             string storeName = Console.ReadLine();
                             storeName = Validations.ValidateName(storeName);
@@ -65,13 +61,10 @@ namespace StoreManagement.UI
                             product = Validations.IsValidProduct(product);
 
                             //create store with the input gotten from the user
-                            Store store = actions_store.CreateStore(storeType, storeName, storeId, product);
-
-                            //save store credentials to file
-                            actions_store.SaveChanges();
+                            Store store = storeActions.CreateKiosk(StoreType.Kiosk, storeName, storeId, product);
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("${storeName} kiosk has been created successfuly!");
-                            ProductsDashboard.DisplayProductsDashboard(actions_store);
+                            ProductsDashboard.DisplayProductsDashboard(storeActions);
                             Console.ReadKey();
                             Console.Clear();
                         }
@@ -110,13 +103,10 @@ namespace StoreManagement.UI
                             product = Validations.IsValidProduct(product);
 
                             //create store with the input gotten from the user
-                            Store store = actions_store.CreateStore(storeType, storeName, storeId, product);
-
-                            //save store credentials to file
-                            actions_store.SaveChanges();
+                            Store store = storeActions.CreateSupermarket(StoreType.Supermarket, storeName, storeId, product);
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("${storeName} supermarket has been created successfuly!");
-                            ProductsDashboard.DisplayProductsDashboard(actions_store);
+                            ProductsDashboard.DisplayProductsDashboard(storeActions);
                             Console.ReadKey();
                             Console.Clear();
                         }
@@ -135,7 +125,7 @@ namespace StoreManagement.UI
                         break;
                     case 0:
                         //going back to the main dashboard display
-                        await MainDashboard.DisplayDashboard(actions_store, actions_customer);
+                        await MainDashboard.DisplayDashboard(customerActions, storeActions);
                         break;
                     default:
                         Console.Clear();

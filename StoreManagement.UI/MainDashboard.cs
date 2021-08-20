@@ -10,15 +10,25 @@ namespace StoreManagement.UI
 {
     public class MainDashboard
     {
+        // private readonly IBusinessLogic _customerActions;
+        // private readonly IStoreActions _storeActions;
+
+        // public async Task Dashboard(IBusinessLogic customerActions, IStoreActions storeActions)
+        // {
+        //     _customerActions = customerActions ?? throw new ArgumentNullException(nameof(customerActions));
+        //     _storeActions = storeActions ?? throw new ArgumentNullException(nameof(storeActions));
+        // }     
+        
         private static string firstName;
         private static string lastName;
         private static string email_Address;
         private static string passWord;
+        private static string cusId;
 
 
         /// Method for displaying the user interface
         //method injection - taking two parameters
-        public static async Task DisplayDashboard(IStore actions_store, IBusinessLogic actions_customer)
+        public static async Task DisplayDashboard(IBusinessLogic customerActions, IStoreActions storeActions)
         {
             bool runApp = true;
 
@@ -47,32 +57,30 @@ namespace StoreManagement.UI
                             try
                             {
                                 Console.WriteLine("Enter FirstName: ");
-                                string firstName = Console.ReadLine();
-                                //firstName = Validations.ValidateName(firstName);
+                                firstName = Console.ReadLine();
 
                                 Console.WriteLine("Enter LastName: ");
-                                string lastName = Console.ReadLine();
-                                //lastName = Validations.ValidateName(lastName);
+                                lastName = Console.ReadLine();
 
                                 Console.WriteLine("Enter Email Address: ");
-                                string email_Address = Console.ReadLine();
-                                //email_Address = Validations.IsValidEmail(email_Address);
-
+                                email_Address = Console.ReadLine();
+                               
                                 Console.WriteLine("Enter Password: ");
-                                string passWord = Console.ReadLine();
-                                //passWord = Validations.isValidPassword(passWord);
+                                passWord = Console.ReadLine();
                                 
                                 //change the foreground color of the console to green
                                 //the register customer method executes
                                 //customer details inputs are written to file.
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Customer customer =  actions_customer.RegisterCustomer(firstName, lastName, email_Address, passWord);
-                                actions_customer.SaveChanges();
+
+                                cusId = Guid.NewGuid().ToString();
+                                Customer customer = customerActions.RegisterCustomer(cusId, firstName, lastName, email_Address, passWord);
+                                customerActions.SaveChanges();
                                 Console.WriteLine("Email: "+ email_Address);
                                 Console.WriteLine("Password: " + passWord);
                                 Console.WriteLine($"Customer \"{customer.FullName}\" has been added successfully");
                                 //display store dashboard
-                                await StoreDashboard.DisplayStoreDashboard(actions_store, actions_customer);
+                                await StoreDashboard.DisplayStoreDashboard(customerActions, storeActions);
                                 Console.WriteLine();
                                 Console.ReadKey();
                                 Console.Clear();
@@ -93,26 +101,17 @@ namespace StoreManagement.UI
                         case 2:
                             try
                             {
-                                Console.WriteLine("Please enter your email address:");
-                                string email_Address = Console.ReadLine();
-                                email_Address = Validations.IsValidEmail(email_Address);
+                                Console.WriteLine("Please enter your login details.");
+                                Console.WriteLine("Email address:");
+                                email_Address = Console.ReadLine();
 
-                                Console.WriteLine("Please enter your password:");
-                                string passWord = Console.ReadLine();
-                                passWord = Validations.isValidPassword(passWord);
+                                Console.WriteLine("Password:");
+                                passWord = Console.ReadLine();
+                                
+                                var loginCustomer = await customerActions.LoginCustomerAsync(email_Address, passWord);
 
-                                var loginCustomer = actions_customer.LoginCustomer(email_Address, passWord);
-
-                                //if login matches with registered user, display store dashboard. If not, show error message.
-                                //if (loginCustomer == 1)
-                                //{
-                                    Console.WriteLine("Login Successful");
-                                    await StoreDashboard.DisplayStoreDashboard(actions_store, actions_customer);
-                                //}
-                                // else
-                                // {
-                                //     Console.WriteLine("Invalid login credentials");
-                                // }
+                                Console.WriteLine("Login Successful");
+                                await StoreDashboard.DisplayStoreDashboard(customerActions, storeActions);
                                 Console.WriteLine();
                                 Console.ReadKey();
                                 Console.Clear();

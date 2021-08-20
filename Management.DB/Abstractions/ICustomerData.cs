@@ -7,8 +7,7 @@ namespace Management.DB
     public interface ICustomerData
     {
         //methods to be implemented by CustomerData
-        List<Customer> customers { get; set; }
-        Task<bool> WriteDataToFile();
-        Task<bool> ReadDataFromFile();
+        Task<Customer> WriteDataToFileAsync(Customer customer);
+        Task<Customer> ReadDataFromFileAsync(string email, string passWord);
     }
 }

@@ -11,18 +11,18 @@ namespace StoreManagement.UI
         //method to handle dependency injections.
         //registration of the dependency in a service container
         private static IServiceProvider serviceProvider;
+        
         static void Main(string[] args)
         {
-            ADO dataConnection  = new ADO();
-            var result = dataConnection.InsertIntoCustomers().Result;
-            
+            //ADO dataConnection  = new ADO();
+            //var result = dataConnection.InsertIntoCustomers().Result;
+
+            ConfigureServices();
+            IBusinessLogic customerActions = serviceProvider.GetRequiredService<IBusinessLogic>();
+            IStoreActions storeActions = serviceProvider.GetRequiredService<IStoreActions>();
             try
             {
-                ConfigureServices();
-                IBusinessLogic actions_customer = serviceProvider.GetRequiredService<IBusinessLogic>();
-                IStore actions_store = serviceProvider.GetRequiredService<IStore>();
-
-                MainDashboard.DisplayDashboard(actions_store, actions_customer).Wait();
+                MainDashboard.DisplayDashboard(customerActions, storeActions).Wait();
             }
             catch (Exception)
             {
@@ -36,8 +36,7 @@ namespace StoreManagement.UI
             var services = new ServiceCollection();
             
             services.AddScoped<IBusinessLogic, CustomerActions>();
-            services.AddScoped<IStore, Kiosk>();
-            services.AddScoped<IStore, SuperMarket>();
+            services.AddScoped<IStoreActions, StoreActions>();
             services.AddScoped<IDataStore, DataStore>();
             services.AddScoped<ICustomerData, CustomerData>();
 

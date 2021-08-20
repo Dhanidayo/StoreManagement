@@ -31,7 +31,7 @@ namespace Management.DB
             return rows > 0;
         }
 
-        public async Task<bool> UpdateStores(string storeName, int product, int id)
+        public async Task<bool> UpdateStores(string storeName, int product, string storeId)
         {
             var connection = CreateConnection();
             await connection.OpenAsync();
@@ -42,7 +42,7 @@ namespace Management.DB
 
             command.Parameters.Add("StoreName", SqlDbType.VarChar).Value = storeName;
             command.Parameters.Add("Product", SqlDbType.Int).Value = product;
-            command.Parameters.Add("Id", SqlDbType.Int).Value = id;
+            command.Parameters.Add("StoreId", SqlDbType.VarChar).Value = storeId;
 
             var rows = await command.ExecuteNonQueryAsync();
 
@@ -72,7 +72,7 @@ namespace Management.DB
                 {
                     StoreType = (StoreType)Enum.Parse(typeof(StoreType),reader["StoreType"].ToString()),
                     StoreName = reader["StoreName"].ToString(),
-                    Id = reader["Id"].ToString(),
+                    StoreId = reader["storeId"].ToString(),
                     Product = Convert.ToInt32(reader["Product"])
                 };
 

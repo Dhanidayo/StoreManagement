@@ -15,51 +15,77 @@ namespace Management.BL
         private readonly ICustomerData _customerData;
         public CustomerActions(ICustomerData customerData)
         {
-            _customerData = customerData;
-            _customerData.ReadDataFromFile();
+            _customerData = customerData ?? throw new ArgumentNullException(nameof(customerData));
         }
 
         //method to register a customer
-        public Customer RegisterCustomer(string firstName, string lastName, string email, string passWord)
+        public Customer RegisterCustomer(string customerId, string firstName, string lastName, string email, string passWord)
         {            
             Customer newCustomer = new Customer
             {
+                Id = customerId,
                 FirstName = firstName,
                 LastName = lastName,
                 Email = email,
                 Password = passWord
             };
             //adding customer to file
-            var storage = _customerData.WriteDataToFile(newCustomer);
-            if (storage)
-            {
+            var storage = _customerData.WriteDataToFileAsync(newCustomer);
+            //if (storage)
                 return newCustomer;
-            }
-            throw new TimeoutException("Unable to create customer now, please try again later");
+            //throw new TimeoutException("Unable to create customer now, please try again later");
         }
 
         //method to login a customer - validate that the credentials are valid
-        public Customer LoginCustomer(string email, string passWord)
+        public async Task<Customer> LoginCustomerAsync(string email, string passWord)
         {
-            _customerData.ReadDataFromFile();
-            var customerList = _customerData.customers;
-            foreach (var customer in customerList)
+            Customer isLoggedIn = new Customer
             {
-                //check if credentials are valid and allow customer to login
-                if (customer.Email == email && customer.Password == passWord)
-                {
-                    return customer;
-                }
-                else
-                {
-                    throw new ArgumentNullException();
-                }
+                Email = email,
+                Password = passWord
+            };
+            var existingCustomer = await _customerData.ReadDataFromFileAsync(email, passWord);
+            if (existingCustomer == null)
+            {
+                throw new ArgumentNullException("Customer does not exist");
             }
-            return;
+            return existingCustomer;
         }
-        public void SaveChanges()
+
+        public bool SaveChanges()
         {
-            _customerData.WriteDataToFile();
+            throw new NotImplementedException();
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//LOGIN LOGIC
+// _customerData.ReadDataFromFile();
+//             Customer customerList = _customerData.customerList;
+//             foreach (var customer in customerList)
+//             {
+//                 //check if credentials are valid and allow customer to login
+//                 if (customer.Email == email && customer.Password == passWord)
+//                 {
+//                     return customer;
+//                 }
+//                 else
+//                 {
+//                     throw new ArgumentNullException();
+//                 }
+//             }
+//             return customerList;
