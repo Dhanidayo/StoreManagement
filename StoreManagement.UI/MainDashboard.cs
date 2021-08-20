@@ -5,20 +5,12 @@ using System.Threading.Tasks;
 using Management.BL;
 using Management.Commons;
 using Management.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace StoreManagement.UI
 {
     public class MainDashboard
-    {
-        // private readonly IBusinessLogic _customerActions;
-        // private readonly IStoreActions _storeActions;
-
-        // public async Task Dashboard(IBusinessLogic customerActions, IStoreActions storeActions)
-        // {
-        //     _customerActions = customerActions ?? throw new ArgumentNullException(nameof(customerActions));
-        //     _storeActions = storeActions ?? throw new ArgumentNullException(nameof(storeActions));
-        // }     
-        
+    {       
         private static string firstName;
         private static string lastName;
         private static string email_Address;
@@ -28,7 +20,7 @@ namespace StoreManagement.UI
 
         /// Method for displaying the user interface
         //method injection - taking two parameters
-        public static async Task DisplayDashboard(IBusinessLogic customerActions, IStoreActions storeActions)
+        public static void DisplayDashboard(IBusinessLogic customerActions)
         {
             bool runApp = true;
 
@@ -75,12 +67,10 @@ namespace StoreManagement.UI
 
                                 cusId = Guid.NewGuid().ToString();
                                 Customer customer = customerActions.RegisterCustomer(cusId, firstName, lastName, email_Address, passWord);
-                                customerActions.SaveChanges();
+                                //customerActions.SaveChanges();
                                 Console.WriteLine("Email: "+ email_Address);
                                 Console.WriteLine("Password: " + passWord);
                                 Console.WriteLine($"Customer \"{customer.FullName}\" has been added successfully");
-                                //display store dashboard
-                                await StoreDashboard.DisplayStoreDashboard(customerActions, storeActions);
                                 Console.WriteLine();
                                 Console.ReadKey();
                                 Console.Clear();
@@ -108,10 +98,13 @@ namespace StoreManagement.UI
                                 Console.WriteLine("Password:");
                                 passWord = Console.ReadLine();
                                 
-                                var loginCustomer = await customerActions.LoginCustomerAsync(email_Address, passWord);
+                                var loginCustomer = customerActions.LoginCustomerAsync(email_Address, passWord);
 
                                 Console.WriteLine("Login Successful");
-                                await StoreDashboard.DisplayStoreDashboard(customerActions, storeActions);
+                                Program.ConfigureServices();
+                                IStoreActions storeActions = Program.serviceProvider.GetRequiredService<IStoreActions>();
+                                //display store dashboard
+                                StoreDashboard.DisplayStoreDashboard(storeActions, cusId);
                                 Console.WriteLine();
                                 Console.ReadKey();
                                 Console.Clear();
@@ -145,26 +138,3 @@ namespace StoreManagement.UI
 
 
 
-
-
-
-
-
-
-
-
-
-//Console.ForegroundColor = ConsoleColor.Green;
-
-
-                                //Console.WriteLine(Validations.IsValidEmail(email));
-                                // if (!IsValidEmail(email))
-                                // {
-                                //     Console.WriteLine("Email does not exist, please register");
-                                //     Console.clear();
-                                // }
-                                // else if (email != userEmail || passWord != userPassword) //yet to implement userEmail & userPassword. Should be
-                                // {                                                        //data saved in the file.
-                                //     Console.WriteLine("Invalid email or password. Please check that you are typing the correct email or password");
-                                    
-                                // }

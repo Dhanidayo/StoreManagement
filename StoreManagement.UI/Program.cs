@@ -10,7 +10,7 @@ namespace StoreManagement.UI
     {
         //method to handle dependency injections.
         //registration of the dependency in a service container
-        private static IServiceProvider serviceProvider;
+        public static IServiceProvider serviceProvider;
         
         static void Main(string[] args)
         {
@@ -19,10 +19,9 @@ namespace StoreManagement.UI
 
             ConfigureServices();
             IBusinessLogic customerActions = serviceProvider.GetRequiredService<IBusinessLogic>();
-            IStoreActions storeActions = serviceProvider.GetRequiredService<IStoreActions>();
             try
             {
-                MainDashboard.DisplayDashboard(customerActions, storeActions).Wait();
+                MainDashboard.DisplayDashboard(customerActions); //removed .wait here
             }
             catch (Exception)
             {
@@ -31,7 +30,7 @@ namespace StoreManagement.UI
         }
 
         //registration of services into the configure services method.
-        private static void ConfigureServices()
+        public static void ConfigureServices()
         {
             var services = new ServiceCollection();
             

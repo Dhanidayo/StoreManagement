@@ -18,119 +18,127 @@ namespace StoreManagement.UI
 
 
         /// Method responsible for displaying the user interface
-         //method injection - taking one parameter.
-        public async static Task DisplayStoreDashboard(IStoreActions storeActions, Customer LoggedInCustomer)
+         //method injection - taking two parameter.
+        public static void DisplayStoreDashboard(IStoreActions storeActions, string cusId)
         {
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine("Create a store.");
+            bool runStore = true;
 
-            Console.WriteLine("Enter: ");
-            Console.WriteLine("1 to create a Kiosk");
-            Console.WriteLine("2 to create a Supermarket");
-            Console.WriteLine("0 to go back to the main dashboard");
+            while (runStore)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("Create a store.");
 
-            var customerInput = Validations.IsValidInput(Console.ReadLine());
-            if (customerInput == -1)
-            {
-                Console.WriteLine("Please enter a valid input");
-                Console.Clear();
-            }
-            else
-            {
-                switch (customerInput)
+                Console.WriteLine("Enter: ");
+                Console.WriteLine("1 to create a Kiosk");
+                Console.WriteLine("2 to create a Supermarket");
+                Console.WriteLine("3 to Add Products to store");
+                Console.WriteLine("4 to Remove Products");
+                Console.WriteLine("5 to get store details");
+                Console.WriteLine("0 to go back to the main dashboard");
+
+                var customerInput = Validations.IsValidInput(Console.ReadLine());
+                if (customerInput == -1)
                 {
-                    case 1:
-                        try
-                        {   
-                            Console.WriteLine("Enter Kiosk name>>");
-                            string storeName = Console.ReadLine();
-                            storeName = Validations.ValidateName(storeName);
+                    Console.WriteLine("Please enter a valid input");
+                    Console.Clear();
+                }
+                else
+                {
+                    switch (customerInput)
+                    {
+                        case 1:
+                            try
+                            {   
+                                Console.WriteLine("Enter Kiosk name>>");
+                                string storeName = Console.ReadLine();
+                                storeName = Validations.ValidateName(storeName);
 
-                            Console.WriteLine("Enter Kiosk Id>>");
-                            string storeId = Console.ReadLine();
-                            storeId = Validations.ValidateName(storeId);
+                                Console.WriteLine("Enter Kiosk Id>>");
+                                string storeId = Console.ReadLine();
+                                storeId = Validations.ValidateName(storeId);
 
-                            Console.WriteLine("Add a product");
-                            int product = Convert.ToInt32(Console.ReadLine());
-                            product = Validations.IsValidProduct(product);
-                            if (product == -1)
-                            {
-                                Console.WriteLine("Please enter a number");
-                                product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
+                                Console.WriteLine("Add a product");
+                                int product = Convert.ToInt32(Console.ReadLine());
+                                product = Validations.IsValidProduct(product);
+                                if (product == -1)
+                                {
+                                    Console.WriteLine("Please enter a number");
+                                    product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
+                                }
+                                product = Validations.IsValidProduct(product);
+
+                                //create store with the input gotten from the user
+                                Store store = storeActions.CreateKiosk(StoreTypes.StoreType.Kiosk, storeName, storeId, product).Result;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("${storeName} kiosk has been created successfuly!");
+                                //ProductsDashboard.DisplayProductsDashboard(storeActions);
+                                Console.ReadKey();
+                                Console.Clear();
                             }
-                            product = Validations.IsValidProduct(product);
-
-                            //create store with the input gotten from the user
-                            Store store = storeActions.CreateKiosk(StoreType.Kiosk, storeName, storeId, product);
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("${storeName} kiosk has been created successfuly!");
-                            ProductsDashboard.DisplayProductsDashboard(storeActions);
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                        catch(FormatException ex)
-                        {                       
-                            Console.WriteLine(ex.Message);
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.Message);
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                        break;
-                    case 2:
-                        try
-                        {
-                            Console.WriteLine("Enter Supermarket name>>");
-                            string storeName = Console.ReadLine();
-                            storeName = Validations.ValidateName(storeName);
-
-                            Console.WriteLine("Enter Supermarket Id>>");
-                            string storeId = Console.ReadLine();
-                            storeId = Validations.ValidateName(storeId);
-
-                            Console.WriteLine("Add a product");
-                            int product = Convert.ToInt32(Console.ReadLine());
-                            product = Validations.IsValidProduct(product);
-                            if (product == -1)
-                            {
-                                Console.WriteLine("Please enter a number");
-                                product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
+                            catch(FormatException ex)
+                            {                       
+                                Console.WriteLine(ex.Message);
+                                Console.ReadKey();
+                                Console.Clear();
                             }
-                            product = Validations.IsValidProduct(product);
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e.Message);
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                Console.WriteLine("Enter Supermarket name>>");
+                                string storeName = Console.ReadLine();
+                                storeName = Validations.ValidateName(storeName);
 
-                            //create store with the input gotten from the user
-                            Store store = storeActions.CreateSupermarket(StoreType.Supermarket, storeName, storeId, product);
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("${storeName} supermarket has been created successfuly!");
-                            ProductsDashboard.DisplayProductsDashboard(storeActions);
-                            Console.ReadKey();
+                                Console.WriteLine("Enter Supermarket Id>>");
+                                string storeId = Console.ReadLine();
+                                storeId = Validations.ValidateName(storeId);
+
+                                Console.WriteLine("Add a product");
+                                int product = Convert.ToInt32(Console.ReadLine());
+                                product = Validations.IsValidProduct(product);
+                                if (product == -1)
+                                {
+                                    Console.WriteLine("Please enter a number");
+                                    product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
+                                }
+                                product = Validations.IsValidProduct(product);
+
+                                //create store with the input gotten from the user
+                                Store store = storeActions.CreateSupermarket(StoreTypes.StoreType.Supermarket, storeName, storeId, product).Result;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("${storeName} supermarket has been created successfuly!");
+                                ProductsDashboard.DisplayProductsDashboard(storeActions);
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                            catch(FormatException ex)
+                            {                       
+                                Console.WriteLine(ex.Message);
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e.Message);
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                            break;
+                        case 0:
+                            //going back to the main dashboard display
+                            runStore = false;
+                            break;
+                        default:
                             Console.Clear();
-                        }
-                        catch(FormatException ex)
-                        {                       
-                            Console.WriteLine(ex.Message);
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e.Message);
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                        break;
-                    case 0:
-                        //going back to the main dashboard display
-                        await MainDashboard.DisplayDashboard(customerActions, storeActions);
-                        break;
-                    default:
-                        Console.Clear();
-                        break;
-                }        
+                            break;
+                    }        
+                }   
             }          
         }
     }   
