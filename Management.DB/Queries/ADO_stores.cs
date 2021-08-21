@@ -70,7 +70,7 @@ namespace Management.DB
                 //Passing the key - the key is the name of the column in the database
                 var store =  new Store
                 {
-                    StoreType = (StoreType)Enum.Parse(typeof(StoreType),reader["StoreType"].ToString()),
+                    StoreType = (StoreTypes.StoreType)Enum.Parse(typeof(StoreTypes.StoreType),reader["StoreType"].ToString()),
                     StoreName = reader["StoreName"].ToString(),
                     StoreId = reader["storeId"].ToString(),
                     Product = Convert.ToInt32(reader["Product"])

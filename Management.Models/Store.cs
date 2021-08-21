@@ -6,8 +6,8 @@ namespace Management.Models
     //store model
     public class Store
     {
-        private StoreType storeType;
-        public StoreType StoreType
+        private StoreTypes.StoreType storeType;
+        public StoreTypes.StoreType StoreType
         {
             get { return storeType; }
             set { storeType = value; }

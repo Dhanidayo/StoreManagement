@@ -16,7 +16,7 @@ namespace Management.BL
             _dataStore = dataStore ?? throw new ArgumentNullException(nameof(dataStore));
         }
 
-        public async Task<Store> CreateKiosk(StoreType storeType, string storeName, string userId, int product)
+        public async Task<Store> CreateKiosk(StoreTypes.StoreType storeType, string storeName, string userId, int product)
         {
             Store newStore = new Store
             {
@@ -30,12 +30,12 @@ namespace Management.BL
             //check if create was successful, if not, throw an exception.
             //if (addNewStore)
             //{
-                return newStore;
+                return addNewStore;
             //}
             //throw new TimeoutException("Unable to create store now, please try again later");
         }
 
-        public async Task<Store> CreateSupermarket(StoreType storeType, string storeName, string userId, int product)
+        public async Task<Store> CreateSupermarket(StoreTypes.StoreType storeType, string storeName, string userId, int product)
         {
             Store newStore = new Store
             {
@@ -49,7 +49,7 @@ namespace Management.BL
             //check if create was successful, if not, throw an exception.
             //if (addNewStore)
             //{
-                return newStore;
+                return addNewStore;
             //}
             throw new TimeoutException("Unable to create store now, please try again later");
         }
