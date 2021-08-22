@@ -65,6 +65,7 @@ namespace StoreManagement.UI
                                 //customer details inputs are written to file.
                                 Console.ForegroundColor = ConsoleColor.Green;
 
+                                //assigning an id to the customer
                                 cusId = Guid.NewGuid().ToString();
                                 Customer customer = customerActions.RegisterCustomer(cusId, firstName, lastName, email_Address, passWord);
                                 //customerActions.SaveChanges();

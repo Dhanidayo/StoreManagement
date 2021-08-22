@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,7 +18,7 @@ namespace Management.DB
             return connection;
         }
 
-        public async Task<bool> AddCustomerToDBAsync(Customer customer)
+        public async Task<Customer> AddCustomerToDBAsync(Customer customer)
         {
             using(var connection = CreateConnection())
             {
@@ -39,7 +40,11 @@ namespace Management.DB
 
                 await connection.CloseAsync();
 
-                return rows > 0;
+                if (rows > 0)
+                {
+                    return customer;
+                }
+                return customer;
             }
         }
 
@@ -47,21 +52,38 @@ namespace Management.DB
         {
            try
            {
+                Customer loginCustomer = new Customer();
+
                 using(var connection = CreateConnection())
-            {
-                connection.Open();
-                
-                SqlCommand command = new SqlCommand("LoginACustomer", connection)
                 {
-                    CommandType = CommandType.StoredProcedure
-                };
+                    connection.Open();
+                    
+                    SqlCommand command = new SqlCommand("LoginACustomer", connection)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
 
-                var rows = await command.ExecuteNonQueryAsync();
+                    command.Parameters.Add("email", SqlDbType.VarChar).Value = email;
+                    command.Parameters.Add("passWord", SqlDbType.VarChar).Value = passWord;
 
-                await connection.CloseAsync();
+                    var reader = await command.ExecuteReaderAsync();
 
-                return rows > 0;
-            }
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            loginCustomer = new Customer
+                            {
+                                Id = reader["Id"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                Password = reader["Password"].ToString()
+                            };
+
+                            await connection.CloseAsync();
+                        }
+                        return loginCustomer;
+                    }
+                }
            }
            catch (System.Exception)
            {    

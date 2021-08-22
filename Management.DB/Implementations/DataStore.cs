@@ -27,7 +27,7 @@ namespace Management.DB
                 }
                 using (StreamWriter writer = File.AppendText(filePath))
                 {
-                    string storeInfo = $"{StoreType.StoreType}, {_store.StoreName}, {_store.StoreId}, {_store.Product}, {_store.UserId}";
+                    string storeInfo = $"{_store.StoreType}, {_store.StoreName}, {_store.StoreId}, {_store.Product}, {_store.UserId}";
                     writer.WriteLine(storeInfo);
                 }
                 return _store;

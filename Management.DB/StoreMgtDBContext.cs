@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Management.DB
 {
-    public class StoreMgtDbContext : DbContext
+    public class StoreMgtDBContext : DbContext
     {
         //the Code-first method
         //using EF Core to create customers, stores, and products table
@@ -26,6 +26,9 @@ namespace Management.DB
             builder.Entity<Customer>()
                     .HasKey(Customer => Customer.Id);
 
+            builder.Entity<Products>()
+                    .HasKey(Products => Products.Id);
+
             //Fluent API for properties
             builder.Entity<Customer>()
                     .Property(customer => customer.Email)
@@ -33,6 +36,7 @@ namespace Management.DB
 
             builder.Entity<Customer>()
                     .Ignore(customer => customer.FullName);
+
 
             //Fluent API for One to Many relationship
             //In this case, a customer has many stores.
@@ -48,7 +52,7 @@ namespace Management.DB
             builder.Entity<Store>()
                     .HasMany(store => store.Products)
                     .WithOne(Products => Products.Store)
-                    .OnDelete(DeleteBehaviour.Cascade)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasForeignKey(products => products.StoreId)
                     .IsRequired();
         }

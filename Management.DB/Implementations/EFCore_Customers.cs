@@ -10,14 +10,18 @@ namespace Management.DB
 {
     public class EFCore_Customers : ICustomerData
     {
-        public async Task<bool> AddCustomerToDBAsync(Customer customer)
+        public async Task<Customer> AddCustomerToDBAsync(Customer customer)
         {
             using (StoreMgtDBContext context = new StoreMgtDBContext())
             {
-                await context.Customers.AddSync(customer);
+                await context.AddAsync(customer);
                 var result = await context.SaveChangesAsync();
 
-                return result > 0;
+                if (result > 0)
+                {
+                    return customer;
+                }
+                return customer;
             }
         }
 
@@ -26,7 +30,7 @@ namespace Management.DB
             using (StoreMgtDBContext context = new StoreMgtDBContext())
             {
                 Customer customer = await context.Customers
-                    .Include(customer => customer.Stores)
+                    .Include(customer => customer.stores)
                     .FirstOrDefaultAsync(customer => customer.Email == email && customer.Password == passWord);
 
                 return customer;
@@ -64,6 +68,7 @@ namespace Management.DB
 
                 return result > 0;
             }
+
         }
     }
 }

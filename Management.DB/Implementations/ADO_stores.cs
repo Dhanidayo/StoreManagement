@@ -191,7 +191,7 @@ namespace Management.DB
                 {
                     var store = new Store
                     {
-                        StoreType = reader["StoreType"].ToString(),
+                        StoreType = (StoreTypes.StoreType)Enum.Parse(typeof(StoreTypes.StoreType),reader["StoreType"].ToString()),
                         StoreId = reader["StoreId"].ToString(),
                         StoreName = reader["StoreName"].ToString(),
                         Product = Convert.ToInt32(reader["Product"]),

@@ -13,7 +13,7 @@ namespace Management.DB
         public static string filePath = @"../CustomerDetails.txt";
         
         //method to write customers' data to file
-        public async Task<bool> AddCustomerToDBAsync(Customer customer)
+        public async Task<Customer> AddCustomerToDBAsync(Customer customer)
         {
             try
             {
@@ -31,12 +31,11 @@ namespace Management.DB
                 }
                 //return customer;
             }
-            catch (Exception)
+            catch (FileNotFoundException)
             {
                 
-                return false;
             }
-            return false;
+            throw new FileNotFoundException();
         }
 
         //method to read customers data from file

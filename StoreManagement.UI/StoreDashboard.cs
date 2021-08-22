@@ -53,9 +53,9 @@ namespace StoreManagement.UI
                                 string storeName = Console.ReadLine();
                                 storeName = Validations.ValidateName(storeName);
 
-                                Console.WriteLine("Enter Kiosk Id>>");
-                                string storeId = Console.ReadLine();
-                                storeId = Validations.ValidateName(storeId);
+                                // Console.WriteLine("Enter Kiosk Id>>");
+                                // string storeId = Console.ReadLine();
+                                // storeId = Validations.ValidateName(storeId);
 
                                 Console.WriteLine("Add a product");
                                 int product = Convert.ToInt32(Console.ReadLine());
@@ -66,6 +66,9 @@ namespace StoreManagement.UI
                                     product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
                                 }
                                 product = Validations.IsValidProduct(product);
+
+                                //assigning an id to the store
+                                string storeId = Guid.NewGuid().ToString();
 
                                 //create store with the input gotten from the user
                                 Store store = storeActions.CreateKiosk(StoreTypes.StoreType.Kiosk, storeName, storeId, product).Result;
@@ -95,19 +98,22 @@ namespace StoreManagement.UI
                                 string storeName = Console.ReadLine();
                                 storeName = Validations.ValidateName(storeName);
 
-                                Console.WriteLine("Enter Supermarket Id>>");
-                                string storeId = Console.ReadLine();
-                                storeId = Validations.ValidateName(storeId);
+                                // Console.WriteLine("Enter Supermarket Id>>");
+                                // string storeId = Console.ReadLine();
+                                // storeId = Validations.ValidateName(storeId);
 
                                 Console.WriteLine("Add a product");
                                 int product = Convert.ToInt32(Console.ReadLine());
                                 product = Validations.IsValidProduct(product);
-                                if (product == -1)
-                                {
-                                    Console.WriteLine("Please enter a number");
-                                    product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
-                                }
-                                product = Validations.IsValidProduct(product);
+                                // if (product == -1)
+                                // {
+                                //     Console.WriteLine("Please enter a number");
+                                //     product = Validations.IsValidProduct(Convert.ToInt32(Console.ReadLine()));
+                                // }
+                                // product = Validations.IsValidProduct(product);
+
+                                //assigning an id to the store
+                                string storeId = cusId = Guid.NewGuid().ToString();
 
                                 //create store with the input gotten from the user
                                 Store store = storeActions.CreateSupermarket(StoreTypes.StoreType.Supermarket, storeName, storeId, product).Result;

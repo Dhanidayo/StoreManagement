@@ -76,35 +76,10 @@ namespace Management.Commons
         {
             try
             {
-                //passWord = " ";
-                ConsoleKeyInfo key;
-                do
+                if (!Regex.IsMatch(passWord, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") && passWord.Length < 6)
                 {
-                key = Console.ReadKey(true);
-                //statement to ensure that customer inputs an actual value and not use backspace or enter an empty value
-                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
-                {
-                passWord += key.KeyChar;
-                Console.Write("*");
-                }
-                else
-                {
-                    passWord = passWord.Substring(0, (passWord.Length - 1));
-                    Console.Write("\b \b");
-                }
-                if (!Regex.IsMatch(passWord, @"^[a-z]+@[^@#$%^&!]+$"))
-                {
-                    Console.WriteLine("Password must include letters and characters eg., password1234");
+                    Console.WriteLine("Password cannot be less than six characters and must include letters and characters eg., password1234");
                     passWord = Console.ReadLine();
-                }
-                if (passWord.Length < 6)
-                {
-                    Console.WriteLine("Password cannot be less than six characters");
-                    passWord = Console.ReadLine();
-                }
-                } while(key.Key != ConsoleKey.Enter); //to stop receiving keys once the enter button is pressed.
-                {
-                    Console.WriteLine();
                 }
                 return passWord;
             }

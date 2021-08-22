@@ -13,7 +13,7 @@ namespace Management.Models
         public StoreTypes.StoreType StoreType
         {
             get { return storeType; }
-            set { storeType = value; }
+            set { storeType = value; } //thinking of setting the value to StoreTypes.StoreType
         }
         
         [Required]

@@ -17,3 +17,4 @@ C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Managemen
 C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.BL\bin\Debug\net5.0\Management.Commons.pdb
 C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.BL\bin\Debug\net5.0\Management.DB.pdb
 C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.BL\obj\Debug\net5.0\Management.BL.csproj.CopyComplete
+C:\Users\lenovo\Dropbox\My PC (DESKTOP-0CQ3F2P)\Documents\StoreManager\Management.BL\bin\Debug\net5.0\Seeder\Customers.json
