@@ -7,7 +7,7 @@ namespace Management.DB
     public interface IDataStore
     {
         //methods to be implemented by datastore
-        Task<bool> AddStoreToDbAsync(Store _store);
+        Task<Store> AddStoreToDbAsync(Store _store);
         Task<bool> ReadStoreDataFromDBAsync(Store storeData);
         Task<bool> AddProductsToStoreAsync(string storeId, int product);
         Task<int> GetStoreProductCountAsync(string storeId);

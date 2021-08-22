@@ -11,6 +11,8 @@ namespace Management.Models
         [Required]
         public static double Price { get; set; }
 
+        public string StoreId { get; set; }
+
         //Navigational properties
         public Store Store { get; set; }
     }

@@ -37,9 +37,9 @@ namespace Management.DB
             //Fluent API for One to Many relationship
             //In this case, a customer has many stores.
             builder.Entity<Customer>()
-                    .HasMany(customer => customer.Stores)
+                    .HasMany(customer => customer.stores)
                     .WithOne(Store => Store.Customer)
-                    .OnDelete(DeleteBehaviour.Cascade)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasForeignKey(customer => customer.UserId)
                     .IsRequired();
 
@@ -47,9 +47,9 @@ namespace Management.DB
             //In this case, a store has many products
             builder.Entity<Store>()
                     .HasMany(store => store.Products)
-                    .WithOne(Product => Product.Store)
+                    .WithOne(Products => Products.Store)
                     .OnDelete(DeleteBehaviour.Cascade)
-                    .HasForeignKey(product => product.StoreId)
+                    .HasForeignKey(products => products.StoreId)
                     .IsRequired();
         }
     }

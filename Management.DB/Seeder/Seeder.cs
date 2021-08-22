@@ -29,7 +29,7 @@ namespace Management.DB
             if (!context.Stores.Any())
             {
                 string data = await File.ReadAllTextAsync(@"../Seeder/Stores.json");
-                List<Store> stores = JsonConvert.DeserializeObject<List<Store>(data);
+                List<Store> stores = JsonConvert.DeserializeObject<List<Store>>(data);
 
                 await context.Stores.AddRangeAsync(stores);
 

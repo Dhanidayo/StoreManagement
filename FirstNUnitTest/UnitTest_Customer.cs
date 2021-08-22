@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Management.BL;
 using Management.Models;
-using Managemnt.DB;
+using Management.DB;
 using System.Threading.Tasks;
 
 namespace FirstNUnitTest

@@ -10,14 +10,18 @@ namespace Management.DB.Implementations
 {
     public class EFCore_Stores : IDataStore
     {
-        public async Task<bool> AddStoreToDbAsync(Store _store)
+        public async Task<Store> AddStoreToDbAsync(Store _store)
         {
             using (StoreMgtDBContext context = new StoreMgtDBContext())
             {
                 await context.AddAsync(_store);
                 var result = await context.SaveChangesAsync();
 
-                return result > 0;
+                if (result > 0)
+                {
+                    return _store;
+                }
+                return _store;
             }
         }
 

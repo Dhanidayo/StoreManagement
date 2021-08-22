@@ -38,10 +38,7 @@ namespace Management.Models
 
         //Navigational properties
         public Customer Customer { get; set; }
-        public ICollection<Products> Products { get; set; }
-
-        
-        
+        public ICollection<Products> Products { get; set; } 
         
         
         

@@ -16,7 +16,7 @@ namespace Management.DB
         public static string filePath = @"../StoreDetails.txt";
         
         //method to write store data to file
-        public async Task<bool> AddStoreToDbAsync(Store _store)
+        public async Task<Store> AddStoreToDbAsync(Store _store)
         {
             try
             {
@@ -30,14 +30,13 @@ namespace Management.DB
                     string storeInfo = $"{StoreType.StoreType}, {_store.StoreName}, {_store.StoreId}, {_store.Product}, {_store.UserId}";
                     writer.WriteLine(storeInfo);
                 }
-                //return _store;
+                return _store;
             }
             catch (FileNotFoundException)
             {
-                
-                return false;
+                   
             }
-            return true;
+            throw new FileNotFoundException();
         }
 
         //method to read store data to file

@@ -19,7 +19,7 @@ namespace Management.DB
         }
 
         //method to create a new store in the store table.
-        public async Task<bool> AddStoreToDbAsync(Store _store)
+        public async Task<Store> AddStoreToDbAsync(Store _store)
         {
             using (var connection = CreateConnection())
             {
@@ -31,7 +31,7 @@ namespace Management.DB
                 SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.Add("StoreId", SqlDbType.NVarChar).Value = _store.StoreId;
-                command.Parameters.Add("StoreType", SqlDbType.NVarChar).Value = StoreTypes.StoreType;
+                command.Parameters.Add("StoreType", SqlDbType.NVarChar).Value = _store.StoreType;
                 command.Parameters.Add("StoreName", SqlDbType.NVarChar).Value = _store.StoreName;
                 command.Parameters.Add("Product", SqlDbType.NVarChar).Value = _store.Product;
                 command.Parameters.Add("UserId", SqlDbType.NVarChar).Value = _store.UserId;
@@ -40,7 +40,11 @@ namespace Management.DB
 
                 await connection.CloseAsync();
 
-                return rows > 0;
+                if (rows > 0)
+                {
+                    return _store;
+                }
+                return _store;
             }
         }
 
