@@ -1,0 +1,62 @@
+[{
+    "StoreType":"0",
+    "StoreId": "b3399d07-a74c-4f49-8221-daf6add2a01f",
+    "StoreName": "Rooxo",
+    "Product": 1,
+    "UserId": "867b492a-fbcd-40a0-bc21-3806feb85f32"
+  }, {
+    "StoreType":"1",
+    "StoreId": "9e3832b7-3c9b-43e1-b95b-a0f482b16c1a",
+    "StoreName": "Feedbug",
+    "Product": 2,
+    "UserId": "867b492a-fbcd-40a0-bc21-3806feb85f32"
+  }, {
+    "StoreType":"0",
+    "StoreId": "dd4a07c0-3283-4335-8dad-93b7f4f61135",
+    "StoreName": "Yakidoo",
+    "Product": 3,
+    "UserId": "03608564-b250-40d0-939f-3bb5a8d000d8"
+  }, {
+    "StoreType": "1",
+    "StoreId": "2219bfdf-0ea5-4f25-813a-aaebe551e304",
+    "StoreName": "Quamba",
+    "Product": 4,
+    "UserId": "03608564-b250-40d0-939f-3bb5a8d000d8"
+  }, {
+    "StoreType":"0",
+    "StoreId": "885a2ac3-a2a5-4648-a7cf-37ebe20476b2",
+    "StoreName": "Yabox",
+    "Product": 5,
+    "UserId": "035e73b8-2693-4c63-ae96-4b5c3a43e927"
+  }, {
+    "StoreType":"1",
+    "StoreId": "79a70763-8c6e-44c1-96f3-a2fd8dd8378c",
+    "StoreName": "Pixonyx",
+    "Product": 6,
+    "UserId": "035e73b8-2693-4c63-ae96-4b5c3a43e927"
+  }, {
+    "StoreType": "0",
+    "StoreId": "28079812-5445-4b9e-9414-d9a6dd241383",
+    "StoreName": "Jabbersphere",
+    "Product": 7,
+    "UserId": "0b36ad48-b866-41c7-b469-bf0ae77793e2"
+  }, {
+    "StoreType": "1",
+    "StoreId": "6b1167e1-83eb-4ccb-95af-e5ccea69f5d2",
+    "StoreName": "Linkbuzz",
+    "Product": 8,
+    "UserId": "0b36ad48-b866-41c7-b469-bf0ae77793e2"
+  }, {
+    "StoreType":"1",
+    "StoreId": "df4e6bd3-0970-4a28-9889-9c0f545a39d9",
+    "StoreName": "Avavee",
+    "Product": 9,
+    "UserId": "f4bf2afd-64f5-4f19-9355-5a8925d88cc8"
+  }, {
+    "StoreType": "0",
+    "StoreId": "d141c54b-43d6-4100-92f7-d236c42be393",
+    "StoreName": "Voomm",
+    "Product": 10,
+    "UserId": "f4bf2afd-64f5-4f19-9355-5a8925d88cc8"
+  }]
+  

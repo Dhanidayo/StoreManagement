@@ -30,7 +30,7 @@ namespace Management.BL
                 Password = passWord
             };
             //adding customer to file
-            var storage = _customerData.WriteDataToFileAsync(newCustomer);
+            var storage = _customerData.AddCustomerToDBAsync(newCustomer);
             //if (storage)
                 return newCustomer;
             //throw new TimeoutException("Unable to create customer now, please try again later");
@@ -44,7 +44,7 @@ namespace Management.BL
                 Email = email,
                 Password = passWord
             };
-            var existingCustomer = await _customerData.ReadDataFromFileAsync(email, passWord);
+            var existingCustomer = await _customerData.GetCustomerFromDBAsync(email, passWord);
             if (existingCustomer == null)
             {
                 throw new ArgumentNullException("Customer does not exist");

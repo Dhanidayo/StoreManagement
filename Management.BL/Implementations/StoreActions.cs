@@ -26,7 +26,7 @@ namespace Management.BL
                 Product = product
             };
             //function to write store details to file.
-            var addNewStore = await _dataStore.WriteStoreDataToDBAsync(newStore);
+            var addNewStore = await _dataStore.AddStoreToDbAsync(newStore);
             //check if create was successful, if not, throw an exception.
             //if (addNewStore)
             //{
@@ -45,7 +45,7 @@ namespace Management.BL
                 Product = product
             };
             //function to write store details to file.
-            var addNewStore = await _dataStore.WriteStoreDataToDBAsync(newStore);
+            var addNewStore = await _dataStore.AddStoreToDbAsync(newStore);
             //check if create was successful, if not, throw an exception.
             //if (addNewStore)
             //{

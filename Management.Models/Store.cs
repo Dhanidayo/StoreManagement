@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Management.Commons;
 
 namespace Management.Models
@@ -13,6 +16,7 @@ namespace Management.Models
             set { storeType = value; }
         }
         
+        [Required]
         private string storeName;
         public string StoreName
         {
@@ -21,6 +25,8 @@ namespace Management.Models
         }
 
         public string StoreId { get; set; } = Guid.NewGuid().ToString();
+
+        [Required]
         public string UserId { get; set; }
 
         private int product;
@@ -30,6 +36,16 @@ namespace Management.Models
             set { product = (value); }
         }
 
+        //Navigational properties
+        public Customer Customer { get; set; }
+        public ICollection<Products> Products { get; set; }
+
+        
+        
+        
+        
+        
+        
         // private int productCount;
         // public int ProductCount
         // {

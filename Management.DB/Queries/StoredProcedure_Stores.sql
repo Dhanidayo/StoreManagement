@@ -16,15 +16,16 @@ GO
 -- =============================================
 -- Author:		Sarah Adebesin
 -- Create date: 15/8/2021
--- Description:	This is to help execute insert statements into the Stores data.
+-- Description:	This is to help execute query statements into the Stores data.
 -- =============================================
+--Stored procedure to create a store in the store table
 CREATE PROCEDURE InsertStore
-@storeType VARCHAR(11), @storeName VARCHAR(80), @storeId VARCHAR(80), @products INT
+@storeType VARCHAR(11), @storeName VARCHAR(80), @storeId VARCHAR(80), @products INT, @Id VARCHAR(80)
 
 AS
 BEGIN
 				
-INSERT INTO Stores VALUES(@storeType, @storeName, @storeId, @products);
+INSERT INTO Stores VALUES(@storeType, @storeName, @storeId, @products, @userId);
 
 END
 GO;
@@ -45,27 +46,37 @@ CREATE PROCEDURE UpdateStore
 AS
 BEGIN
 
-UPDATE Stores SET StoreName = @storeName, Products = @products WHERE Id = @Id;
+UPDATE Stores SET Products = @products WHERE Id = @userId;
 
 END
 GO;
 
---Stored procedure to select a particular store
-CREATE PROCEDURE SelectStore
+--Stored procedure to select all stores belonging to a user.
+CREATE PROCEDURE SelectStores
 AS
 BEGIN
 
-SELECT * FROM Stores WHERE Id = @Id;
+SELECT * FROM Stores WHERE Id = @userId;
 
 END
 GO;
 
---Stored procedure to delete a store
+--Stored procedure to delete all stores belonging to a user.
+CREATE PROCEDURE DeleteStoresBelongingToACustomer
+AS
+BEGIN
+
+DELETE FROM Stores WHERE Id = @userId;
+
+END
+GO;
+
+--Stored procedure to delete a store.
 CREATE PROCEDURE DeleteStore
 AS
 BEGIN
 
-DELETE FROM Stores WHERE Id = @Id;
+DELETE FROM Stores WHERE Id = @storeId;
 
 END
 GO;

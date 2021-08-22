@@ -16,7 +16,7 @@ namespace Management.DB
         public static string filePath = @"../StoreDetails.txt";
         
         //method to write store data to file
-        public async Task<Store> WriteStoreDataToDBAsync(Store _store)
+        public async Task<bool> AddStoreToDbAsync(Store _store)
         {
             try
             {
@@ -27,20 +27,21 @@ namespace Management.DB
                 }
                 using (StreamWriter writer = File.AppendText(filePath))
                 {
-                    string storeInfo = $"{_store.StoreType}, {_store.StoreName}, {_store.StoreId}, {_store.Product}";
+                    string storeInfo = $"{StoreType.StoreType}, {_store.StoreName}, {_store.StoreId}, {_store.Product}, {_store.UserId}";
                     writer.WriteLine(storeInfo);
                 }
-                return _store;
+                //return _store;
             }
             catch (FileNotFoundException)
             {
                 
-                throw new Exception();
+                return false;
             }
+            return true;
         }
 
         //method to read store data to file
-        public async Task<Store> ReadStoreDataFromDBAsync(Store storeData)
+        public async Task<bool> ReadStoreDataFromDBAsync(Store storeData)
         {
            try
             {
@@ -72,13 +73,13 @@ namespace Management.DB
                         // };
                     }
                 }
-                return storeData;
+                //return storeData;
             }
             catch (FileNotFoundException)
             {
-                
-                throw new FileNotFoundException();
+                return false;
             }
+            return true;
         }
 
         public Task<bool> AddProductsToStoreAsync(string storeId, int Product)
@@ -105,7 +106,12 @@ namespace Management.DB
             }
         }
 
-        public Task<bool> DeleteStores(string storeId)
+        public Task<ICollection<Store>> GetAllStoresBelongingToACustomer(string userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteStore(string storeId)
         {
             throw new NotImplementedException();
         }

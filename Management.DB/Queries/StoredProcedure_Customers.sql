@@ -40,6 +40,16 @@ SELECT * FROM Customers;
 END
 GO;
 
+--Stored procedure to select a customer using email and password
+CREATE PROCEDURE LoginACustomer
+AS
+BEGIN
+
+SELECT * FROM Customers WHERE Email = @email AND Pwd = @Password;
+
+END
+GO;
+
 --Stored procedure to update a customer data
 CREATE PROCEDURE UpdateCustomer
 @firstName VARCHAR(80), @email VARCHAR(120)

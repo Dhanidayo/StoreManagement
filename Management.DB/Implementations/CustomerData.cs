@@ -13,7 +13,7 @@ namespace Management.DB
         public static string filePath = @"../CustomerDetails.txt";
         
         //method to write customers' data to file
-        public async Task<Customer> WriteDataToFileAsync(Customer customer)
+        public async Task<bool> AddCustomerToDBAsync(Customer customer)
         {
             try
             {
@@ -29,17 +29,18 @@ namespace Management.DB
                     writer.WriteLine(customerFile);
                     await writer.DisposeAsync();
                 }
-                return customer;
+                //return customer;
             }
             catch (Exception)
             {
                 
-                throw new ArgumentNullException();
+                return false;
             }
+            return false;
         }
 
         //method to read customers data from file
-        public async Task<Customer> ReadDataFromFileAsync(string email, string passWord)
+        public async Task<Customer> GetCustomerFromDBAsync(string email, string passWord)
         {
             try
             {

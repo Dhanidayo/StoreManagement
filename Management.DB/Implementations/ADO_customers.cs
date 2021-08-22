@@ -9,26 +9,65 @@ namespace Management.DB
 {
     public class ADO_customers
     {
-        //declaring and assigning a connection string
-        private const string ConnectionString = @"Data Source= .;Initial Catalog=WomenTechsters;Integrated Security=true;";
-
-
-        public async Task<bool> InsertIntoCustomers(string firstName, string lastName, string email, string passWord)
+        private static SqlConnection CreateConnection()
         {
-            //creating the connection object with connection the string.
-            var connection = CreateConnection();
-            await connection.OpenAsync();
+            //declaring and assigning a connection string
+            string ConnectionString = @"Data Source= .;Initial Catalog=WomenTechsters;Integrated Security=true";
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            return connection;
+        }
 
-            //creating a query
-            string query = $"INSERT INTO Customers VALUES ('{firstName}', '{lastName}', '{email}', '{passWord}')";
+        public async Task<bool> AddCustomerToDBAsync(Customer customer)
+        {
+            using(var connection = CreateConnection())
+            {
+                connection.Open();
 
-            SqlCommand command = new SqlCommand(query, connection);
+                //creating a query
+                string query = ("INSERT INTO Customers VALUES (FirstName = @firstName, LastName = @lastName, Email = @email, Passsword = @passWord, Id = @id)");
 
-            var rows = await command.ExecuteNonQueryAsync();
+                SqlCommand command = new SqlCommand(query, connection);
 
-            await connection.CloseAsync();
+                command.Parameters.Add("FirstName", SqlDbType.NVarChar).Value = customer.FirstName;
+                command.Parameters.Add("LastName", SqlDbType.NVarChar).Value = customer.LastName;
+                command.Parameters.Add("Email", SqlDbType.NVarChar).Value = customer.Email;
+                command.Parameters.Add("Password", SqlDbType.NVarChar).Value = customer.Password;
+                command.Parameters.Add("Id", SqlDbType.NVarChar).Value = customer.Id;
 
-            return rows > 0;
+
+                var rows = await command.ExecuteNonQueryAsync();
+
+                await connection.CloseAsync();
+
+                return rows > 0;
+            }
+        }
+
+        public async Task<Customer> GetCustomerFromDBAsync(string email, string passWord)
+        {
+           try
+           {
+                using(var connection = CreateConnection())
+            {
+                connection.Open();
+                
+                SqlCommand command = new SqlCommand("LoginACustomer", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                var rows = await command.ExecuteNonQueryAsync();
+
+                await connection.CloseAsync();
+
+                return rows > 0;
+            }
+           }
+           catch (System.Exception)
+           {    
+               
+           }
+           throw new UnauthorizedAccessException("Invalid Credentials");
         }
 
         public async Task<bool> UpdateCustomers(string firstName, string email, int id)
@@ -103,12 +142,6 @@ namespace Management.DB
             var rows = await command.ExecuteNonQueryAsync();
 
             return rows > 0;
-        }
-
-        private SqlConnection CreateConnection()
-        {
-            SqlConnection connection = new SqlConnection(ConnectionString);
-            return connection;
         }
     }
 }
